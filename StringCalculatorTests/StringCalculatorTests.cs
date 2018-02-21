@@ -43,9 +43,9 @@ namespace StringCalculatorTests
         }
 
         [Fact]
-        public void ShouldReturnZeroOnInvalidTwoNumbers()
+        public void ShouldReturnValidNUmberIfOtherIsInvalid()
         {
-            int expected = 0;
+            int expected = 3;
 
             var actual = Calcuator.Add("as3,3");
 
@@ -54,7 +54,7 @@ namespace StringCalculatorTests
         }
 
         [Fact]
-        public void ShouldReturnZeroOnInvalidSeperator()
+        public void ShouldReturnTheSumOfTwoValues()
         {
             int expected = 5;
 
@@ -63,6 +63,19 @@ namespace StringCalculatorTests
             actual.Should().Be(expected);
 
         }
+
+        [Fact]
+        public void ShouldReturnZeroOnEmpty()
+        {
+            int expected = 0;
+
+            var actual = Calcuator.Add(string.Empty);
+
+            actual.Should().Be(expected);
+
+        }
+
+
 
     }
 }

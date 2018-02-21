@@ -7,28 +7,20 @@ namespace StringCalculator
         private const char Seperator = ',';
         public int Add(string inputString)
         {
+            var outPut = 0;
+            if (string.IsNullOrWhiteSpace(inputString))
+                return outPut;
+
             var parsedNumbers = inputString.Split(new char[] { Seperator });
-
-
-            if (parsedNumbers.Length == 1)
+           
+            foreach(var stringVal in parsedNumbers)
             {
                 int parsedNum;
-                if (int.TryParse(parsedNumbers[0], out parsedNum))
-                    return parsedNum;
+                if (int.TryParse(stringVal, out parsedNum))
+                    outPut += parsedNum;
             }
-              else  if(parsedNumbers.Length  == 2)
-            {
-                int parsedNum1;
-                int parsedNum2;
-
-                int.TryParse(parsedNumbers[0], out parsedNum1);
-                int.TryParse(parsedNumbers[1], out parsedNum2);
-
-                return  parsedNum1 + parsedNum2;
-            }
-
-
-            return 0;
+            
+            return outPut;
         }
     }
 }
