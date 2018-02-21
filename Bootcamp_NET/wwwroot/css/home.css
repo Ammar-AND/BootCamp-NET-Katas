@@ -1,0 +1,37 @@
+﻿body {
+}
+
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+
+.clickBlock {
+    background-color:red;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    border: 1px solid silver;
+    display: table-cell;    
+    vertical-align:middle;
+    margin:20px;
+}
+
+
+    .clickBlock h3 {
+        color: white;
+        font-variant-caps: small-caps;
+    }
+
+
+.orchid {
+    background-color: mediumorchid;
+}
+.green {
+    background-color:darkseagreen;
+}
+.peru {
+    background-color:peru;
+}
+.pink {
+    background-color: lightpink;
+}

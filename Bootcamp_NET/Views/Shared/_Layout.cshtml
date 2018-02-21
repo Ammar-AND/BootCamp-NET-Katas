@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <!-- CSS -->
+    <link href="~/css/shared/layout.css" rel="stylesheet" />
+
+    <!-- Page dependant CSS-->
+    @RenderSection("Styles", false)
+
+</head>
+<body>
+    <div>
+
+        <!-- Header -->
+        <img class="companyIcon" src="~/images/shared/icoAndDigital.png" />
+        <div class="headerTitle">@ViewBag.Title</div>
+        <hr size="3" />
+
+
+
+
+        <!-- Content -->
+        @RenderBody()
+    </div>
+</body>
+</html>

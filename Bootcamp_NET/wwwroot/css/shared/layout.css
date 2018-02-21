@@ -1,0 +1,33 @@
+﻿body {
+    padding:20px;
+    margin:0px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+hr {
+    clear: both;
+    border: none;
+    height: 3px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+    margin-bottom: 50px;
+}
+
+
+.companyIcon {
+    height: 80px;
+    width: 80px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+
+.headerTitle {
+    float: left;
+    padding-top: 20px;
+    padding-left: 30px;
+    font-size: 2em;
+    font-weight: bold;
+}
