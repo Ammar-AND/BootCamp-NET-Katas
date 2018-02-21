@@ -31,6 +31,38 @@ namespace StringCalculatorTests
 
         }
 
+        [Fact]
+        public void ShouldReturnZeroOnString()
+        {
+            int expected = 0;
+
+            var actual = Calcuator.Add("asr");
+
+            actual.Should().Be(expected);
+
+        }
+
+        [Fact]
+        public void ShouldReturnZeroOnInvalidTwoNumbers()
+        {
+            int expected = 0;
+
+            var actual = Calcuator.Add("as3,3");
+
+            actual.Should().Be(expected);
+
+        }
+
+        [Fact]
+        public void ShouldReturnZeroOnInvalidSeperator()
+        {
+            int expected = 5;
+
+            var actual = Calcuator.Add("2,3");
+
+            actual.Should().Be(expected);
+
+        }
 
     }
 }
