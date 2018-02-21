@@ -1,25 +1,29 @@
 ﻿using System;
+using System.Linq;
 
 namespace StringCalculator
 {
     public class StringCalculator
     {
-        private const char Seperator = ',';
+        private readonly char[] seperators = new char[] { ',', '\n' };
+
         public int Add(string inputString)
         {
             var outPut = 0;
             if (string.IsNullOrWhiteSpace(inputString))
                 return outPut;
 
-            var parsedNumbers = inputString.Split(new char[] { Seperator });
-           
-            foreach(var stringVal in parsedNumbers)
+            try
             {
-                int parsedNum;
-                if (int.TryParse(stringVal, out parsedNum))
-                    outPut += parsedNum;
+                outPut = int.Parse(inputString.Split(seperators)
+                    .Aggregate((x, y) => (int.Parse(x) + int.Parse(y)).ToString()));             
             }
-            
+            catch( Exception ex)
+            {
+                //Log
+                return outPut = 0;
+            }
+
             return outPut;
         }
     }
