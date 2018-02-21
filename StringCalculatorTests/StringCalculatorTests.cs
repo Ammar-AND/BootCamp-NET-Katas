@@ -156,5 +156,31 @@ namespace StringCalculatorTests
 
         }
 
+        [Fact]
+        public void ShouldReturn0WithWrongSeperator()
+        {
+            int expected = 0;
+
+            var testInput = "//;\n1,2";
+
+            var actual = Calcuator.Add(testInput);
+
+            actual.Should().Be(expected);
+
+        }
+
+        [Fact]
+        public void ShouldReturn0WithMissingLineBreakSeperator()
+        {
+            int expected = 0;
+
+            var testInput = "//;1;2";
+
+            var actual = Calcuator.Add(testInput);
+
+            actual.Should().Be(expected);
+
+        }
+
     }
 }
